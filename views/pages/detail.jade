@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-md-7
+				img(src="#{item.img}",alt="#{item.title}",width="720px",height="600px")
+			.col-md-5
+				dl.dl-horizontal
+					dt 名字
+					dd= material.title
+					dt 描述
+					dd= material.description
+					dt 来源
+					dd= material.src
+				

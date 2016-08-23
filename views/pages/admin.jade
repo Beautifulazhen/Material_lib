@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post",action="/admin/material/new")
+				input(type="hidden",name="material[_id]", value="#{material._id}")
+				.form-group
+					label.col-sm-3.control-label(for="inputTitle") 名字
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="material[title]", value="#{material.title}")
+				.form-group
+					label.col-sm-3.control-label(for="inputDescription") 描述
+					.col-sm-10
+						input#inputDescription.form-control(type="text",name="material[description]" value="#{material.description}")
+				.form-group
+					label.col-sm-3.control-label(for="inputSrc") 来源
+					.col-sm-10
+						input#inputSrc.form-control(type="text",name="material[src]" value="#{material.src}")
+				.col-sm-offset-2.col-sm-10
+					button.btn.btn-primary(type="submit") 提交	
+				
+							

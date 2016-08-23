@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			each item in materials
+				.col-md-2
+					.thumbnail
+						a(href="/materials/#{item._id}")
+							img(src="#{item.img}",alt="#{item.title}")
+						.caption
+							h3 #{item.title}
+							p #{item.description}
