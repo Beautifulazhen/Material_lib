@@ -9,6 +9,7 @@ block content
 						th 名字
 						th 描述
 						th 来源
+						th 本地路径
 						th 录入时间
 						th 查看
 						th 更新
@@ -19,10 +20,11 @@ block content
 							td #{item.title}
 							td #{item.description}
 							td #{item.src}
+							td #{item.local]
 							td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
 							td: a(target="_blank", href="../material/#{item._id}") 查看
 							td: a(target="_blank", href="../admin/update/#{item._id}") 修改
 							td
-								button.btn.btn-danger.del(type="button" data-id="#{item._id}") 删除
+								button.btn.btn-danger.del(type="button", data-id="#{item._id}") 删除
 								
 	script(src="/js/admin.js")

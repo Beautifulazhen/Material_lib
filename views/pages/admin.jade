@@ -17,6 +17,14 @@ block content
 					label.col-sm-3.control-label(for="inputSrc") 来源
 					.col-sm-10
 						input#inputSrc.form-control(type="text",name="material[src]" value="#{material.src}")
+				.form-group
+					label.col-sm-3.control-label(for="inputImg") 图片
+					.col-sm-10
+						input#inputSrc.form-control(type="text",name="material[img]" value="#{material.img}")
+				.form-group
+					label.col-sm-3.control-label(for="inputLocal") 本地路径
+					.col-sm-10
+						input#inputSrc.form-control(type="text",name="material[local]" value="#{material.local}")
 				.col-sm-offset-2.col-sm-10
 					button.btn.btn-primary(type="submit") 提交	
 				

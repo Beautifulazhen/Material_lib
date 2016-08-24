@@ -4,13 +4,15 @@ block content
 	.container
 		.row
 			.col-md-7
-				img(src="#{item.img}",alt="#{item.title}",width="720px",height="600px")
+				img(src='#{material.img}' widith="800" height="400")
 			.col-md-5
 				dl.dl-horizontal
 					dt 名字
-					dd= material.title
+					dd #{material.title}
 					dt 描述
-					dd= material.description
+					dd #{material.description}
 					dt 来源
-					dd= material.src
+					dd #{material.src}
+					dt 本地路径
+					dd #{material.local}
 				

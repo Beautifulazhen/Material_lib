@@ -4,7 +4,9 @@ var MaterialSchema = new mongoose.Schema({
 	title:String,
 	description:String,
 	src:String,
+	local:String,
 	img:String,
+	
 	meta:{
 		createAt:{
 			type:Date,
@@ -23,6 +25,7 @@ MaterialSchema.pre('save',function(next){
 	}else{
 		this.meta.updateAt = Date.now()
 	}
+	next()
 })
 
 MaterialSchema.statics = {
@@ -34,7 +37,7 @@ MaterialSchema.statics = {
 	},
 	findById:function(id,cb){
 		return this
-			.findOne({_id:id})
+			.findOne({_id: id})
 			.exec(cb)
 	}
 }

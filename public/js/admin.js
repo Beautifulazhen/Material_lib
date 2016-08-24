@@ -6,10 +6,10 @@ $(function(){
 		
 		$.ajax({
 			type:'DELETE',
-			url:'/admin/list?id'+id
+			url:'/admin/list/delete?id='+id
 		})
 		.done(function(results){
-			if(results.success === 1){
+			if(results.success){
 				if(tr.length>0){
 					tr.remove();
 				}
