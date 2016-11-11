@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			table.table.table-hover.table-bordered
+				thead
+					tr
+						th 名字
+						th 描述
+						th 来源
+						th pv
+						th 本地路径
+						th 录入时间
+						th 查看
+						th 更新
+						th 删除
+				tbody
+					each item in materials
+						tr(class="item-id-#{item._id}")
+							td #{item.title}
+							td #{item.description}
+							td #{item.src}
+							td #{item.pv}
+							td #{item.local]
+							td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+							td: a(target="_blank", href="/material/#{item._id}") 查看
+							td: a(target="_blank", href="/admin/material/update/#{item._id}") 修改
+							td
+								button.btn.btn-danger.del(type="button", data-id="#{item._id}") 删除
+								
+	script(src="/js/admin.js")

@@ -4,11 +4,17 @@
   "description": "my material lib",
   "main": "index.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "jade": "^1.11.0",
-    "mongoose": "^4.5.9"
+    "mongoose": "^4.5.9",
+    "morgan": "^1.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "bcrypt-nodejs": "0.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post",action="/admin/material/new")
+				if material._id
+					input(type="hidden",name="material[_id]", value="#{material._id}")
+				.form-group
+					label.col-sm-3.control-label(for="inputCategory") 图片分类
+					.col-sm-10
+						input#inputCategory.form-control(type="text",name="material[categoryName]", value= material.categoryName)
+				.form-group
+					label.col-sm-3.control-label(for="inputTitle") 分类选择
+					each cat in categories
+						label.radio-inline
+							if material._id
+								input(type="radio", name="material[category]", value=cat._id,checked=cat._id.toString()==material.category.toString())
+							else
+								input(type="radio", name="material[category]", value=cat._id)
+							| #{cat.name}
+				.form-group
+					label.col-sm-3.control-label(for="inputTitle") 名字
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="material[title]", value= material.title)
+				.form-group
+					label.col-sm-3.control-label(for="inputDescription") 描述
+					.col-sm-10
+						input#inputDescription.form-control(type="text",name="material[description]" value= material.description)
+				.form-group
+					label.col-sm-3.control-label(for="inputSrc") 来源
+					.col-sm-10
+						input#inputSrc.form-control(type="text",name="material[src]" value= material.src)
+				.form-group
+					label.col-sm-3.control-label(for="inputImg") 图片
+					.col-sm-10
+						input#inputSrc.form-control(type="text",name="material[img]" value= material.img)
+				.form-group
+					label.col-sm-3.control-label(for="inputLocal") 本地路径
+					.col-sm-10
+						input#inputSrc.form-control(type="text",name="material[local]" value= material.local)
+				.col-sm-offset-2.col-sm-10
+					button.btn.btn-primary(type="submit") 提交	
+				
+							
